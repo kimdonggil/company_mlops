@@ -7,7 +7,6 @@ assignees: kimdonggil
 
 ---
 
-Template content
 **버그 내용**
 - 버그 내용 요약
 
