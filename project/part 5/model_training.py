@@ -13,7 +13,7 @@ import bentoml
 from pydantic import BaseModel
 import typing as t
 import requests
-from kubernetes.client import V1EnvVar
+from kubernetes.client import V1EnvVar, V1Volume, V1VolumeMount, V1EmptyDirVolumeSource
 
 # step 2.
 @partial(create_component_from_func, base_image='dgkim1983/dlabflow:model-20250304')
@@ -23,7 +23,7 @@ def Training(algorithm: str, epochs:int):
     ch = logging.StreamHandler()
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s\n\n', datefmt='%Y-%m-%d %H:%M:%S')
     ch.setFormatter(formatter)
-    kubeflow_logger = logging.getLogger("bentoml")
+    kubeflow_logger = logging.getLogger("kubeflow")
     if not kubeflow_logger.hasHandlers():
         kubeflow_logger.addHandler(ch)
     kubeflow_logger.setLevel(logging.INFO)
@@ -46,9 +46,9 @@ def pipelines():
     Training_task = Training(args.algorithm, args.epochs) \
         .set_display_name('Model Training') \
         .apply(onprem.mount_pvc('example-claim', volume_name='data', volume_mount_path='/mnt/working')) \
-        .add_env_variable(V1EnvVar(name="CUDA_VISIBLE_DEVICES", value="0"))
-    smh_vol = kfp.dsl.PipelineVolume(name = 'shm-vol', empty_dir = {'medium': 'Memory'})
-    Training_task.add_pvolumes({'/dev/shm': smh_vol})
+        .add_env_variable(V1EnvVar(name="CUDA_VISIBLE_DEVICES", value="0")) \
+        .add_volume(V1Volume(name='dshm', empty_dir=V1EmptyDirVolumeSource(medium='Memory'))) \
+        .add_volume_mount(V1VolumeMount(mount_path='/dev/shm', name='dshm'))
 
 # step 4.
 if __name__ == '__main__':
