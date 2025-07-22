@@ -1,0 +1,1 @@
+kubectl -n kubeflow-user-example-com apply -f pod.yaml

@@ -1,0 +1,1 @@
+kubectl logs -f pod/ml-pipeline-585cf55bff-hb4nn -n kubeflow --all-container

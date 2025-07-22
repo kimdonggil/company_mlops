@@ -1,0 +1,1 @@
+sudo sysctl -w fs.inotify.max_queued_events=2099999999

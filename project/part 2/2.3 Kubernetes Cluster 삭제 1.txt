@@ -1,0 +1,1 @@
+ll /usr/local/bin/

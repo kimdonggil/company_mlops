@@ -1,0 +1,2 @@
+sudo chmod +x clear.sh
+./clear.sh

@@ -1,0 +1,1 @@
+kubectl -n kubeflow-user-example-com get pv,pvc | awk '{print $1, $2, $3, $5}' | column -t
