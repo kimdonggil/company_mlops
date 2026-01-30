@@ -1,0 +1,1 @@
+sudo vim apps/jupyter/jupyter-web-app/upstream/base/deployment.yaml

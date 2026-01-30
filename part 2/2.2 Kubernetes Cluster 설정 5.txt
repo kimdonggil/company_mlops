@@ -1,0 +1,1 @@
+kubectl get pod -n kube-system | grep nvidia

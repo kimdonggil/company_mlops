@@ -1,0 +1,4 @@
+{
+  "algorithm": "yolo11n.pt",
+  "epochs": 3
+}

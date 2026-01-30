@@ -1,0 +1,1 @@
+nohup bentoml serve service:svc --port 30000 > /mnt/working/bentoml/bentoml.log 2>&1 &

@@ -1,0 +1,1 @@
+kubectl get pods -n Kubeflow | awk '{print $1, $2, $3}' | column -t

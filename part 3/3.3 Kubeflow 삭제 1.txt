@@ -1,0 +1,1 @@
+kustomize build example | kubectl delete -f -

@@ -1,0 +1,1 @@
+kubectl logs -f pod/nvidia-device-plugin-daemonset-jpfl5 -n kube-system --all-containers

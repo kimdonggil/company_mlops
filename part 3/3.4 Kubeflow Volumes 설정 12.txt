@@ -1,0 +1,1 @@
+kubectl -n kubeflow-user-example-com exec -it example-pod -- /bin/bash
