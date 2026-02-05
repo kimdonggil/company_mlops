@@ -1,2 +1,2 @@
 cd manifests
-sudo git checkout v1.8-branch
+sudo git checkout v1.8.1-rc0
