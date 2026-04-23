@@ -1,0 +1,1 @@
+dgkim1983/kubeflow:kubebuilder-kube-rbac-proxy-v0.13.1
