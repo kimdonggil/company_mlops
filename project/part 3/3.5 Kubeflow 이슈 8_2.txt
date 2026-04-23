@@ -1,0 +1,1 @@
+kubectl edit deployment pvcviewer-controller-manager -n kubeflow
