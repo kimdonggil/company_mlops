@@ -1,0 +1,1 @@
+kubectl get pods -n kubeflow | grep tensorboard-controller-deployment
