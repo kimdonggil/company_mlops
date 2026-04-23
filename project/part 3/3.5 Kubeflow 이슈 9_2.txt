@@ -1,0 +1,1 @@
+kubectl edit deployment kserve-controller-manager -n kubeflow 
