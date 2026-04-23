@@ -1,0 +1,1 @@
+dgkim1983/kubeflow:ml-pipeline-frontend-2.0.5
