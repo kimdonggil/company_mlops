@@ -1,0 +1,1 @@
+kubectl edit deployment ml-pipeline-ui -n kubeflow
